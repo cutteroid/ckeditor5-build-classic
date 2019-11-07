@@ -51,7 +51,9 @@ module.exports = {
 			additionalLanguages: 'all'
 		} ),
 		new webpack.BannerPlugin( {
-			banner: bundler.getLicenseBanner(),
+			banner: `/*!
+ * Build date: ${ new Date() }
+ */` + bundler.getLicenseBanner(),
 			raw: true
 		} )
 	],
