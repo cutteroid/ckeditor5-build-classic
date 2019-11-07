@@ -10,8 +10,9 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import Collection from '@ckeditor/ckeditor5-utils/src/collection';
 import Model from '@ckeditor/ckeditor5-ui/src/model';
-import SplitButtonView from '@ckeditor/ckeditor5-ui/src/dropdown/button/splitbuttonview';
-import { createDropdown, addListToDropdown } from '@ckeditor/ckeditor5-ui/src/dropdown/utils';
+import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
+// import SplitButtonView from '@ckeditor/ckeditor5-ui/src/dropdown/button/splitbuttonview';
+// import { createDropdown, addListToDropdown } from '@ckeditor/ckeditor5-ui/src/dropdown/utils';
 import { getLocalizedLanguageDefinitions } from './utils';
 
 import codeBlockIcon from './theme/icons/codeblock.svg';
@@ -36,19 +37,19 @@ export default class CodeBlockUI extends Plugin {
 
 		componentFactory.add( 'codeBlock', locale => {
 			const command = editor.commands.get( 'codeBlock' );
-			const dropdownView = createDropdown( locale, SplitButtonView );
-			const splitButtonView = dropdownView.buttonView;
 
-			splitButtonView.set( {
+			const buttonView = new ButtonView( locale );
+
+			buttonView.set( {
 				label: t( 'Code block' ),
 				tooltip: true,
 				icon: codeBlockIcon,
 				isToggleable: true
 			} );
 
-			splitButtonView.bind( 'isOn' ).to( command, 'value', value => !!value );
+			buttonView.bind( 'isOn' ).to( command, 'value', value => !!value );
 
-			splitButtonView.on( 'execute', () => {
+			buttonView.on( 'execute', () => {
 				editor.execute( 'codeBlock', {
 					language: localizedLanguageDefinitions[ 0 ].class,
 				} );
@@ -56,23 +57,55 @@ export default class CodeBlockUI extends Plugin {
 				editor.editing.view.focus();
 			} );
 
-			dropdownView.on( 'execute', evt => {
-				editor.execute( 'codeBlock', {
-					language: evt.source._codeBlockLanguage,
-					forceValue: true
-				} );
-
-				editor.editing.view.focus();
-			} );
-
-			dropdownView.class = 'ck-code-block-dropdown';
-			dropdownView.bind( 'isEnabled' ).to( command );
-
-			addListToDropdown( dropdownView, this._getLanguageListItemDefinitions( localizedLanguageDefinitions ) );
-
-			return dropdownView;
+			return buttonView;
 		} );
 	}
+
+	// init_splitDropdown() {
+	// 	const editor = this.editor;
+	// 	const t = editor.t;
+	// 	const componentFactory = editor.ui.componentFactory;
+	// 	const localizedLanguageDefinitions = getLocalizedLanguageDefinitions( editor );
+
+	// 	componentFactory.add( 'codeBlock', locale => {
+	// 		const command = editor.commands.get( 'codeBlock' );
+	// 		const dropdownView = createDropdown( locale, SplitButtonView );
+	// 		const splitButtonView = dropdownView.buttonView;
+
+	// 		splitButtonView.set( {
+	// 			label: t( 'Code block' ),
+	// 			tooltip: true,
+	// 			icon: codeBlockIcon,
+	// 			isToggleable: true
+	// 		} );
+
+	// 		splitButtonView.bind( 'isOn' ).to( command, 'value', value => !!value );
+
+	// 		splitButtonView.on( 'execute', () => {
+	// 			editor.execute( 'codeBlock', {
+	// 				language: localizedLanguageDefinitions[ 0 ].class,
+	// 			} );
+
+	// 			editor.editing.view.focus();
+	// 		} );
+
+	// 		dropdownView.on( 'execute', evt => {
+	// 			editor.execute( 'codeBlock', {
+	// 				language: evt.source._codeBlockLanguage,
+	// 				forceValue: true
+	// 			} );
+
+	// 			editor.editing.view.focus();
+	// 		} );
+
+	// 		dropdownView.class = 'ck-code-block-dropdown';
+	// 		dropdownView.bind( 'isEnabled' ).to( command );
+
+	// 		addListToDropdown( dropdownView, this._getLanguageListItemDefinitions( localizedLanguageDefinitions ) );
+
+	// 		return dropdownView;
+	// 	} );
+	// }
 
 	/**
 	 * A helper returning a collection of the `codeBlock` dropdown items representing languages
