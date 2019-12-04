@@ -19,10 +19,10 @@ import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-// import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize'
-
+// import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 // import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
@@ -31,7 +31,6 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 
-// CUSTOM MODULES
 import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import HeadingButtonsUI from '@ckeditor/ckeditor5-heading/src/headingbuttonsui';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
@@ -43,7 +42,6 @@ import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import ImagePanel from './ImagePanel/imagepanel';
 import Fullscreen from './fullscreen/fullscreen';
 import Heading from './ckeditor5-heading/src/heading';
-// import CodeBlock from './codeBlock/codeblock';
 import ImageUpload from './ckeditor5-image/src/imageupload';
 
 export default class ClassicEditor extends ClassicEditorBase {}

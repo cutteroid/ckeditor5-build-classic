@@ -54,8 +54,8 @@
     "stylelint-config-ckeditor5": "^1.0.0",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^3.1.0",
-    "style-loader": "^1.0.1",
-    "uglifyjs-webpack-plugin": "^1.3.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   },
@@ -95,7 +95,7 @@
     }
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-autosave": "^15.0.0",
+    "@ckeditor/ckeditor5-autosave": "^16.0.0",
     "@ckeditor/ckeditor5-code-block": "^16.0.0"
   }
 }
