@@ -29,6 +29,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import CodeBlock from '@ckeditor/ckeditor5-code-block';
 
 // CUSTOM MODULES
 import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
@@ -42,7 +43,7 @@ import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import ImagePanel from './ImagePanel/imagepanel';
 import Fullscreen from './fullscreen/fullscreen';
 import Heading from './ckeditor5-heading/src/heading';
-import CodeBlock from './codeBlock/codeblock';
+// import CodeBlock from './codeBlock/codeblock';
 import ImageUpload from './ckeditor5-image/src/imageupload';
 
 export default class ClassicEditor extends ClassicEditorBase {}
