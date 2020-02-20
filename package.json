@@ -27,9 +27,11 @@
   "devDependencies": {
     "@ckeditor/ckeditor5-adapter-ckfinder": "^17.0.0",
     "@ckeditor/ckeditor5-autoformat": "^17.0.0",
+    "@ckeditor/ckeditor5-autosave": "^17.0.0",
     "@ckeditor/ckeditor5-basic-styles": "^17.0.0",
     "@ckeditor/ckeditor5-block-quote": "^17.0.0",
     "@ckeditor/ckeditor5-ckfinder": "^17.0.0",
+    "@ckeditor/ckeditor5-code-block": "^17.0.0",
     "@ckeditor/ckeditor5-core": "^17.0.0",
     "@ckeditor/ckeditor5-dev-utils": "^12.0.0",
     "@ckeditor/ckeditor5-dev-webpack-plugin": "^8.0.0",
@@ -93,9 +95,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "dependencies": {
-    "@ckeditor/ckeditor5-autosave": "^17.0.0",
-    "@ckeditor/ckeditor5-code-block": "^17.0.0"
   }
 }
