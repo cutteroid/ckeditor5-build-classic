@@ -1,20 +1,20 @@
 {
-  "_from": "@ckeditor/ckeditor5-image@^15.0.0",
-  "_id": "@ckeditor/ckeditor5-image@15.0.0",
+  "_from": "@ckeditor/ckeditor5-image@^19.0.1",
+  "_id": "@ckeditor/ckeditor5-image@19.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-Vvmlb+IZV5eGJk+KSbHu0rWX7w0CKkpvAl/aunOL4v1jBdOgKyiPt5fAJuH5r6HHs5Tq7YCJRacRcVahXb0jXQ==",
+  "_integrity": "sha512-pYx07Hdp9hTJhxgCFILNEGa4mPO7Vdu/Jubi/ZE1XdO9J1i/mj6ddFhtLef8psYk9Ujy4zkBLhjn8SQh3KNXYA==",
   "_location": "/@ckeditor/ckeditor5-image",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "@ckeditor/ckeditor5-image@^15.0.0",
+    "raw": "@ckeditor/ckeditor5-image@^19.0.1",
     "name": "@ckeditor/ckeditor5-image",
     "escapedName": "@ckeditor%2fckeditor5-image",
     "scope": "@ckeditor",
-    "rawSpec": "^15.0.0",
+    "rawSpec": "^19.0.1",
     "saveSpec": null,
-    "fetchSpec": "^15.0.0"
+    "fetchSpec": "^19.0.1"
   },
   "_requiredBy": [
     "#DEV:/",
@@ -22,9 +22,9 @@
     "/@ckeditor/ckeditor5-easy-image",
     "/@ckeditor/ckeditor5-media-embed"
   ],
-  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-image/-/ckeditor5-image-15.0.0.tgz",
-  "_shasum": "d35363c1d1eda5a7f32c055ee394e46a709e52ca",
-  "_spec": "@ckeditor/ckeditor5-image@^15.0.0",
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-image/-/ckeditor5-image-19.0.1.tgz",
+  "_shasum": "759729c116066f791d501362f48bc427aebe67e8",
+  "_spec": "@ckeditor/ckeditor5-image@^19.0.1",
   "_where": "/Users/slade/Work/ckeditor",
   "author": {
     "name": "CKSource",
@@ -35,55 +35,42 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@ckeditor/ckeditor5-core": "^15.0.0",
-    "@ckeditor/ckeditor5-engine": "^15.0.0",
-    "@ckeditor/ckeditor5-ui": "^15.0.0",
-    "@ckeditor/ckeditor5-upload": "^15.0.0",
-    "@ckeditor/ckeditor5-utils": "^15.0.0",
-    "@ckeditor/ckeditor5-widget": "^15.0.0"
+    "@ckeditor/ckeditor5-clipboard": "^19.0.1",
+    "@ckeditor/ckeditor5-core": "^19.0.1",
+    "@ckeditor/ckeditor5-engine": "^19.0.1",
+    "@ckeditor/ckeditor5-ui": "^19.0.1",
+    "@ckeditor/ckeditor5-upload": "^19.0.1",
+    "@ckeditor/ckeditor5-utils": "^19.0.1",
+    "@ckeditor/ckeditor5-widget": "^19.1.0"
   },
   "deprecated": false,
   "description": "Image feature for CKEditor 5.",
   "devDependencies": {
-    "@ckeditor/ckeditor5-basic-styles": "^15.0.0",
-    "@ckeditor/ckeditor5-block-quote": "^15.0.0",
-    "@ckeditor/ckeditor5-clipboard": "^15.0.0",
-    "@ckeditor/ckeditor5-cloud-services": "^15.0.0",
-    "@ckeditor/ckeditor5-easy-image": "^15.0.0",
-    "@ckeditor/ckeditor5-editor-classic": "^15.0.0",
-    "@ckeditor/ckeditor5-enter": "^15.0.0",
-    "@ckeditor/ckeditor5-heading": "^15.0.0",
-    "@ckeditor/ckeditor5-indent": "^15.0.0",
-    "@ckeditor/ckeditor5-link": "^15.0.0",
-    "@ckeditor/ckeditor5-list": "^15.0.0",
-    "@ckeditor/ckeditor5-paragraph": "^15.0.0",
-    "@ckeditor/ckeditor5-table": "^15.0.0",
-    "@ckeditor/ckeditor5-typing": "^15.0.0",
-    "@ckeditor/ckeditor5-undo": "^15.0.0",
-    "eslint": "^5.5.0",
-    "eslint-config-ckeditor5": "^2.0.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^7.0.0"
+    "@ckeditor/ckeditor5-basic-styles": "^19.0.1",
+    "@ckeditor/ckeditor5-block-quote": "^19.0.1",
+    "@ckeditor/ckeditor5-cloud-services": "^19.0.1",
+    "@ckeditor/ckeditor5-easy-image": "^19.0.1",
+    "@ckeditor/ckeditor5-editor-classic": "^19.0.1",
+    "@ckeditor/ckeditor5-enter": "^19.0.1",
+    "@ckeditor/ckeditor5-heading": "^19.0.1",
+    "@ckeditor/ckeditor5-indent": "^19.0.1",
+    "@ckeditor/ckeditor5-link": "^19.0.1",
+    "@ckeditor/ckeditor5-list": "^19.0.1",
+    "@ckeditor/ckeditor5-paragraph": "^19.1.0",
+    "@ckeditor/ckeditor5-table": "^19.1.0",
+    "@ckeditor/ckeditor5-typing": "^19.0.1",
+    "@ckeditor/ckeditor5-undo": "^19.0.1"
   },
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.7.1"
   },
-  "eslintIgnore": [
-    "src/lib/**",
-    "packages/**"
-  ],
   "files": [
     "lang",
     "src",
     "theme"
   ],
   "homepage": "https://ckeditor.com/ckeditor-5",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "keywords": [
     "ckeditor",
     "ckeditor5",
@@ -92,18 +79,11 @@
     "ckeditor5-plugin"
   ],
   "license": "GPL-2.0-or-later",
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --quiet"
-    ]
-  },
   "name": "@ckeditor/ckeditor5-image",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckeditor/ckeditor5-image.git"
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-image"
   },
-  "scripts": {
-    "lint": "eslint --quiet '**/*.js'"
-  },
-  "version": "15.0.0"
+  "version": "19.0.1"
 }

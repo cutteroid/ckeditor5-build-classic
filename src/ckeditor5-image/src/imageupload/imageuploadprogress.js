@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
@@ -12,7 +12,7 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import FileRepository from '@ckeditor/ckeditor5-upload/src/filerepository';
 import uploadingPlaceholder from '../../theme/icons/image_placeholder.svg';
-import env from '@ckeditor/ckeditor5-utils/src/env';
+import { getViewImgFromWidget } from '../image/utils';
 
 import '../../theme/imageuploadprogress.css';
 import '../../theme/imageuploadicon.css';
@@ -103,8 +103,7 @@ export default class ImageUploadProgress extends Plugin {
 			return;
 		}
 
-		// Because in Edge there is no way to show fancy animation of completeIcon we need to skip it.
-		if ( status == 'complete' && fileRepository.loaders.get( uploadId ) && !env.isEdge ) {
+		if ( status == 'complete' && fileRepository.loaders.get( uploadId ) ) {
 			_showCompleteIcon( viewFigure, viewWriter, editor.editing.view );
 		}
 
@@ -143,7 +142,7 @@ function _showPlaceholder( placeholder, viewFigure, writer ) {
 		writer.addClass( 'ck-image-upload-placeholder', viewFigure );
 	}
 
-	const viewImg = viewFigure.getChild( 0 );
+	const viewImg = getViewImgFromWidget( viewFigure );
 
 	if ( viewImg.getAttribute( 'src' ) !== placeholder ) {
 		writer.setAttribute( 'src', placeholder, viewImg );
@@ -270,7 +269,7 @@ function _removeUIElement( viewFigure, writer, uniqueProperty ) {
 // @param {module:upload/filerepository~FileLoader} loader
 function _displayLocalImage( viewFigure, writer, loader ) {
 	if ( loader.data ) {
-		const viewImg = viewFigure.getChild( 0 );
+		const viewImg = getViewImgFromWidget( viewFigure );
 
 		writer.setAttribute( 'src', loader.data, viewImg );
 	}

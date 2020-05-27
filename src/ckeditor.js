@@ -31,7 +31,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 
-// import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import HeadingButtonsUI from '@ckeditor/ckeditor5-heading/src/headingbuttonsui';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
@@ -43,7 +43,7 @@ import ImagePanel from './ImagePanel/imagepanel';
 import Fullscreen from './fullscreen/fullscreen';
 import Heading from './ckeditor5-heading/src/heading';
 import ImageUpload from './ckeditor5-image/src/imageupload';
-import Autosave from './autosave/autosave';
+// import Autosave from './autosave/autosave';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 

@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
@@ -17,6 +17,7 @@ import env from '@ckeditor/ckeditor5-utils/src/env';
 import ImageUploadCommand from '../../src/imageupload/imageuploadcommand';
 import { fetchLocalImage, isLocalImage } from '../../src/imageupload/utils';
 import { createImageTypeRegExp } from './utils';
+import { getViewImgFromWidget } from '../image/utils';
 
 /**
  * The editing part of the image upload feature. It registers the `'imageUpload'` command.
@@ -43,7 +44,7 @@ export default class ImageUploadEditing extends Plugin {
 
 		editor.config.define( 'image', {
 			upload: {
-				types: [ 'jpeg', 'png', 'gif', 'bmp', 'jfif', 'tiff' ]
+				types: [ 'jpeg', 'png', 'gif', 'bmp', 'webp', 'tiff' ]
 			}
 		} );
 	}
@@ -128,7 +129,7 @@ export default class ImageUploadEditing extends Plugin {
 				return;
 			}
 
-			const writer = new UpcastWriter();
+			const writer = new UpcastWriter( editor.editing.view.document );
 
 			for ( const fetchableImage of fetchableImages ) {
 				// Set attribute marking that the image was processed already.
@@ -217,7 +218,7 @@ export default class ImageUploadEditing extends Plugin {
 				/* istanbul ignore next */
 				if ( env.isSafari ) {
 					const viewFigure = editor.editing.mapper.toViewElement( imageElement );
-					const viewImg = viewFigure.getChild( 0 );
+					const viewImg = getViewImgFromWidget( viewFigure );
 
 					editor.editing.view.once( 'render', () => {
 						// Early returns just to be safe. There might be some code ran
