@@ -1,0 +1,1033 @@
+diff --git a/src/ckeditor5-heading/CHANGELOG.md b/src/ckeditor5-heading/CHANGELOG.md
+index a37442a..c1215d6 100755
+--- a/src/ckeditor5-heading/CHANGELOG.md
++++ b/src/ckeditor5-heading/CHANGELOG.md
+@@ -1,6 +1,40 @@
+ Changelog
+ =========
+ 
++All changes in the package are documented in the main repository. See: https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md.
++
++Changes for the past releases are available below.
++
++## [19.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v18.0.0...v19.0.0) (2020-04-29)
++
++Internal changes only (updated dependencies, documentation, etc.).
++
++
++## [18.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v17.0.0...v18.0.0) (2020-03-19)
++
++### Other changes
++
++* Updated translations. ([99855b5](https://github.com/ckeditor/ckeditor5-heading/commit/99855b5))
++
++
++## [17.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v16.0.0...v17.0.0) (2020-02-19)
++
++### Bug fixes
++
++* Focus the editor before executing toolbar buttons' command. See [ckeditor/ckeditor5#353](https://github.com/ckeditor/ckeditor5/issues/353). ([2495b81](https://github.com/ckeditor/ckeditor5-heading/commit/2495b81))
++
++### Other changes
++
++* Updated translations. ([f947574](https://github.com/ckeditor/ckeditor5-heading/commit/f947574))
++
++
++## [16.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v15.0.0...v16.0.0) (2019-12-04)
++
++### Other changes
++
++* Updated translations. ([bf98b57](https://github.com/ckeditor/ckeditor5-heading/commit/bf98b57))
++
++
+ ## [15.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v11.0.5...v15.0.0) (2019-10-23)
+ 
+ ### Features
+diff --git a/src/ckeditor5-heading/LICENSE.md b/src/ckeditor5-heading/LICENSE.md
+index afd92c9..b0bfd43 100755
+--- a/src/ckeditor5-heading/LICENSE.md
++++ b/src/ckeditor5-heading/LICENSE.md
+@@ -2,7 +2,7 @@ Software License Agreement
+ ==========================
+ 
+ **CKEditor 5 Headings Feature** – https://github.com/ckeditor/ckeditor5-heading <br>
+-Copyright (c) 2003-2019, [CKSource](http://cksource.com) Frederico Knabben. All rights reserved.
++Copyright (c) 2003-2020, [CKSource](http://cksource.com) Frederico Knabben. All rights reserved.
+ 
+ Licensed under the terms of [GNU General Public License Version 2 or later](http://www.gnu.org/licenses/gpl.html).
+ 
+diff --git a/src/ckeditor5-heading/README.md b/src/ckeditor5-heading/README.md
+index 74a057f..fc89438 100755
+--- a/src/ckeditor5-heading/README.md
++++ b/src/ckeditor5-heading/README.md
+@@ -2,9 +2,6 @@ CKEditor 5 headings feature
+ ========================================
+ 
+ [![npm version](https://badge.fury.io/js/%40ckeditor%2Fckeditor5-heading.svg)](https://www.npmjs.com/package/@ckeditor/ckeditor5-heading)
+-[![Build Status](https://travis-ci.org/ckeditor/ckeditor5-heading.svg?branch=master)](https://travis-ci.org/ckeditor/ckeditor5-heading)
+-[![Coverage Status](https://coveralls.io/repos/github/ckeditor/ckeditor5-heading/badge.svg?branch=master)](https://coveralls.io/github/ckeditor/ckeditor5-heading?branch=master)
+-<br>
+ [![Dependency Status](https://david-dm.org/ckeditor/ckeditor5-heading/status.svg)](https://david-dm.org/ckeditor/ckeditor5-heading)
+ [![devDependency Status](https://david-dm.org/ckeditor/ckeditor5-heading/dev-status.svg)](https://david-dm.org/ckeditor/ckeditor5-heading?type=dev)
+ 
+diff --git a/src/ckeditor5-heading/lang/translations/ar.po b/src/ckeditor5-heading/lang/translations/ar.po
+index 9385c7d..a5279f0 100755
+--- a/src/ckeditor5-heading/lang/translations/ar.po
++++ b/src/ckeditor5-heading/lang/translations/ar.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/az.po b/src/ckeditor5-heading/lang/translations/az.po
+index 2e38d92..a1526c9 100755
+--- a/src/ckeditor5-heading/lang/translations/az.po
++++ b/src/ckeditor5-heading/lang/translations/az.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,7 +54,7 @@ msgstr "Başlıq 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Başlığınızı yazın"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+diff --git a/src/ckeditor5-heading/lang/translations/bg.po b/src/ckeditor5-heading/lang/translations/bg.po
+index 5440402..3f14f3c 100755
+--- a/src/ckeditor5-heading/lang/translations/bg.po
++++ b/src/ckeditor5-heading/lang/translations/bg.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ca.po b/src/ckeditor5-heading/lang/translations/ca.po
+index 4e5db3c..950984e 100755
+--- a/src/ckeditor5-heading/lang/translations/ca.po
++++ b/src/ckeditor5-heading/lang/translations/ca.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/cs.po b/src/ckeditor5-heading/lang/translations/cs.po
+index 1f99119..36009be 100755
+--- a/src/ckeditor5-heading/lang/translations/cs.po
++++ b/src/ckeditor5-heading/lang/translations/cs.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/da.po b/src/ckeditor5-heading/lang/translations/da.po
+index d8fa4ea..9d1a941 100755
+--- a/src/ckeditor5-heading/lang/translations/da.po
++++ b/src/ckeditor5-heading/lang/translations/da.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/de.po b/src/ckeditor5-heading/lang/translations/de.po
+index 3b8980e..5ccd933 100755
+--- a/src/ckeditor5-heading/lang/translations/de.po
++++ b/src/ckeditor5-heading/lang/translations/de.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/el.po b/src/ckeditor5-heading/lang/translations/el.po
+index 13f6fe5..cb2d61a 100755
+--- a/src/ckeditor5-heading/lang/translations/el.po
++++ b/src/ckeditor5-heading/lang/translations/el.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/en-au.po b/src/ckeditor5-heading/lang/translations/en-au.po
+index f25a6f7..be0f6bc 100755
+--- a/src/ckeditor5-heading/lang/translations/en-au.po
++++ b/src/ckeditor5-heading/lang/translations/en-au.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/en-gb.po b/src/ckeditor5-heading/lang/translations/en-gb.po
+index 0ede8c8..fd55d2d 100755
+--- a/src/ckeditor5-heading/lang/translations/en-gb.po
++++ b/src/ckeditor5-heading/lang/translations/en-gb.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/en.po b/src/ckeditor5-heading/lang/translations/en.po
+index 78e2df4..45ac2a7 100755
+--- a/src/ckeditor5-heading/lang/translations/en.po
++++ b/src/ckeditor5-heading/lang/translations/en.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/eo.po b/src/ckeditor5-heading/lang/translations/eo.po
+index e5ef973..96a96aa 100755
+--- a/src/ckeditor5-heading/lang/translations/eo.po
++++ b/src/ckeditor5-heading/lang/translations/eo.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/es.po b/src/ckeditor5-heading/lang/translations/es.po
+index 2ddfab8..313a53f 100755
+--- a/src/ckeditor5-heading/lang/translations/es.po
++++ b/src/ckeditor5-heading/lang/translations/es.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,8 +54,8 @@ msgstr "Encabezado 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Introduce tu título"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Introduce o pega tu contenido aquí"
+diff --git a/src/ckeditor5-heading/lang/translations/et.po b/src/ckeditor5-heading/lang/translations/et.po
+index 26316dd..97617ef 100755
+--- a/src/ckeditor5-heading/lang/translations/et.po
++++ b/src/ckeditor5-heading/lang/translations/et.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/eu.po b/src/ckeditor5-heading/lang/translations/eu.po
+index 8125d0e..fcbcf46 100755
+--- a/src/ckeditor5-heading/lang/translations/eu.po
++++ b/src/ckeditor5-heading/lang/translations/eu.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/fa.po b/src/ckeditor5-heading/lang/translations/fa.po
+index 9473087..45ab083 100755
+--- a/src/ckeditor5-heading/lang/translations/fa.po
++++ b/src/ckeditor5-heading/lang/translations/fa.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/fi.po b/src/ckeditor5-heading/lang/translations/fi.po
+index e440efe..9b387c7 100755
+--- a/src/ckeditor5-heading/lang/translations/fi.po
++++ b/src/ckeditor5-heading/lang/translations/fi.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/fr.po b/src/ckeditor5-heading/lang/translations/fr.po
+index 7f5ee71..7b4774b 100755
+--- a/src/ckeditor5-heading/lang/translations/fr.po
++++ b/src/ckeditor5-heading/lang/translations/fr.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -22,11 +22,11 @@ msgstr "Paragraphe"
+ 
+ msgctxt "Tooltip for the heading dropdown."
+ msgid "Heading"
+-msgstr "Titre"
++msgstr "En-tête"
+ 
+ msgctxt "Default label for the heading dropdown."
+ msgid "Choose heading"
+-msgstr "Choisir le titre"
++msgstr "Choisir l'en-tête"
+ 
+ msgctxt "Dropdown option label for the heading level 1 format."
+ msgid "Heading 1"
+@@ -54,8 +54,8 @@ msgstr "Titre 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Rentrer votre titre"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Noter ou coller votre contenu ici"
+diff --git a/src/ckeditor5-heading/lang/translations/gl.po b/src/ckeditor5-heading/lang/translations/gl.po
+index 22ca869..2a36208 100755
+--- a/src/ckeditor5-heading/lang/translations/gl.po
++++ b/src/ckeditor5-heading/lang/translations/gl.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/he.po b/src/ckeditor5-heading/lang/translations/he.po
+index 6c32ab8..9b4ab41 100755
+--- a/src/ckeditor5-heading/lang/translations/he.po
++++ b/src/ckeditor5-heading/lang/translations/he.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -22,40 +22,40 @@ msgstr "פיסקה"
+ 
+ msgctxt "Tooltip for the heading dropdown."
+ msgid "Heading"
+-msgstr ""
++msgstr "כותרת"
+ 
+ msgctxt "Default label for the heading dropdown."
+ msgid "Choose heading"
+-msgstr ""
++msgstr "בחר סוג כותרת"
+ 
+ msgctxt "Dropdown option label for the heading level 1 format."
+ msgid "Heading 1"
+-msgstr ""
++msgstr "כותרת 1"
+ 
+ msgctxt "Dropdown option label for the heading level 2 format."
+ msgid "Heading 2"
+-msgstr ""
++msgstr "כותרת 2"
+ 
+ msgctxt "Dropdown option label for the heading level 3 format."
+ msgid "Heading 3"
+-msgstr ""
++msgstr "כותרת 3"
+ 
+ msgctxt "Dropdown option label for the heading level 4 format."
+ msgid "Heading 4"
+-msgstr ""
++msgstr "כותרת 4"
+ 
+ msgctxt "Dropdown option label for the heading level 5 format."
+ msgid "Heading 5"
+-msgstr ""
++msgstr "כותרת 5"
+ 
+ msgctxt "Dropdown option label for the heading level 6 format."
+ msgid "Heading 6"
+-msgstr ""
++msgstr "כותרת 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "הזן כותרת"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "הזן או הדבק את התוכן כאן"
+diff --git a/src/ckeditor5-heading/lang/translations/hr.po b/src/ckeditor5-heading/lang/translations/hr.po
+index 6b3ed18..dc191d6 100755
+--- a/src/ckeditor5-heading/lang/translations/hr.po
++++ b/src/ckeditor5-heading/lang/translations/hr.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,8 +54,8 @@ msgstr "Naslov 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Utipkajte naslov"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Utipkajte ili zalijepite Vaš sadržaj ovdje."
+diff --git a/src/ckeditor5-heading/lang/translations/hu.po b/src/ckeditor5-heading/lang/translations/hu.po
+index db279fb..d93288c 100755
+--- a/src/ckeditor5-heading/lang/translations/hu.po
++++ b/src/ckeditor5-heading/lang/translations/hu.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/id.po b/src/ckeditor5-heading/lang/translations/id.po
+index f692388..d8efee5 100755
+--- a/src/ckeditor5-heading/lang/translations/id.po
++++ b/src/ckeditor5-heading/lang/translations/id.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/it.po b/src/ckeditor5-heading/lang/translations/it.po
+index a3e69dd..9e7f473 100755
+--- a/src/ckeditor5-heading/lang/translations/it.po
++++ b/src/ckeditor5-heading/lang/translations/it.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ja.po b/src/ckeditor5-heading/lang/translations/ja.po
+index 22f7cfc..ab77a19 100755
+--- a/src/ckeditor5-heading/lang/translations/ja.po
++++ b/src/ckeditor5-heading/lang/translations/ja.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/km.po b/src/ckeditor5-heading/lang/translations/km.po
+index 0155c71..55a7a9a 100755
+--- a/src/ckeditor5-heading/lang/translations/km.po
++++ b/src/ckeditor5-heading/lang/translations/km.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/kn.po b/src/ckeditor5-heading/lang/translations/kn.po
+index c40ac40..fd1927b 100755
+--- a/src/ckeditor5-heading/lang/translations/kn.po
++++ b/src/ckeditor5-heading/lang/translations/kn.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ko.po b/src/ckeditor5-heading/lang/translations/ko.po
+index 4568d80..0501fb0 100755
+--- a/src/ckeditor5-heading/lang/translations/ko.po
++++ b/src/ckeditor5-heading/lang/translations/ko.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -42,20 +42,20 @@ msgstr "제목3"
+ 
+ msgctxt "Dropdown option label for the heading level 4 format."
+ msgid "Heading 4"
+-msgstr ""
++msgstr "제목4"
+ 
+ msgctxt "Dropdown option label for the heading level 5 format."
+ msgid "Heading 5"
+-msgstr ""
++msgstr "제목5"
+ 
+ msgctxt "Dropdown option label for the heading level 6 format."
+ msgid "Heading 6"
+-msgstr ""
++msgstr "제목6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "제목 입력"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "여기에 내용을 입력하거나 붙여넣기 하세요."
+diff --git a/src/ckeditor5-heading/lang/translations/ku.po b/src/ckeditor5-heading/lang/translations/ku.po
+index e9ca49a..37aef22 100755
+--- a/src/ckeditor5-heading/lang/translations/ku.po
++++ b/src/ckeditor5-heading/lang/translations/ku.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/lt.po b/src/ckeditor5-heading/lang/translations/lt.po
+index f3d1497..806a18a 100755
+--- a/src/ckeditor5-heading/lang/translations/lt.po
++++ b/src/ckeditor5-heading/lang/translations/lt.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/lv.po b/src/ckeditor5-heading/lang/translations/lv.po
+index 91067f0..08cb4ac 100755
+--- a/src/ckeditor5-heading/lang/translations/lv.po
++++ b/src/ckeditor5-heading/lang/translations/lv.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/nb.po b/src/ckeditor5-heading/lang/translations/nb.po
+index cab5c6c..2b0f0e2 100755
+--- a/src/ckeditor5-heading/lang/translations/nb.po
++++ b/src/ckeditor5-heading/lang/translations/nb.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ne.po b/src/ckeditor5-heading/lang/translations/ne.po
+index 6f51e8c..e654dc1 100755
+--- a/src/ckeditor5-heading/lang/translations/ne.po
++++ b/src/ckeditor5-heading/lang/translations/ne.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/nl.po b/src/ckeditor5-heading/lang/translations/nl.po
+index b97c408..f358857 100755
+--- a/src/ckeditor5-heading/lang/translations/nl.po
++++ b/src/ckeditor5-heading/lang/translations/nl.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/no.po b/src/ckeditor5-heading/lang/translations/no.po
+index f9bad36..b50fcce 100755
+--- a/src/ckeditor5-heading/lang/translations/no.po
++++ b/src/ckeditor5-heading/lang/translations/no.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,8 +54,8 @@ msgstr "Overskrift 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Skriv inn tittel"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Skriv eller lim inn ditt innhold her"
+diff --git a/src/ckeditor5-heading/lang/translations/pl.po b/src/ckeditor5-heading/lang/translations/pl.po
+index 9f485f3..9fabe00 100755
+--- a/src/ckeditor5-heading/lang/translations/pl.po
++++ b/src/ckeditor5-heading/lang/translations/pl.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/pt-br.po b/src/ckeditor5-heading/lang/translations/pt-br.po
+index c18dea0..bfc57a6 100755
+--- a/src/ckeditor5-heading/lang/translations/pt-br.po
++++ b/src/ckeditor5-heading/lang/translations/pt-br.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/pt.po b/src/ckeditor5-heading/lang/translations/pt.po
+index e834888..8b301d3 100755
+--- a/src/ckeditor5-heading/lang/translations/pt.po
++++ b/src/ckeditor5-heading/lang/translations/pt.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ro.po b/src/ckeditor5-heading/lang/translations/ro.po
+index d4e7d54..4b8a0b2 100755
+--- a/src/ckeditor5-heading/lang/translations/ro.po
++++ b/src/ckeditor5-heading/lang/translations/ro.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ru.po b/src/ckeditor5-heading/lang/translations/ru.po
+index 61704e1..b271c1b 100755
+--- a/src/ckeditor5-heading/lang/translations/ru.po
++++ b/src/ckeditor5-heading/lang/translations/ru.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -22,11 +22,11 @@ msgstr "Параграф"
+ 
+ msgctxt "Tooltip for the heading dropdown."
+ msgid "Heading"
+-msgstr "Заголовок"
++msgstr "Стиль"
+ 
+ msgctxt "Default label for the heading dropdown."
+ msgid "Choose heading"
+-msgstr "Выбрать заголовок"
++msgstr "Выбор стиля"
+ 
+ msgctxt "Dropdown option label for the heading level 1 format."
+ msgid "Heading 1"
+@@ -54,8 +54,8 @@ msgstr "Заголовок 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Введите заголовок"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Введите или вставьте сюда ваш текст"
+diff --git a/src/ckeditor5-heading/lang/translations/sk.po b/src/ckeditor5-heading/lang/translations/sk.po
+index ef694b4..ce0324c 100755
+--- a/src/ckeditor5-heading/lang/translations/sk.po
++++ b/src/ckeditor5-heading/lang/translations/sk.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,8 +54,8 @@ msgstr "Nadpis 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Vložte nadpis"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Vložte obsah"
+diff --git a/src/ckeditor5-heading/lang/translations/sq.po b/src/ckeditor5-heading/lang/translations/sq.po
+index f8d1ebd..e0f399d 100755
+--- a/src/ckeditor5-heading/lang/translations/sq.po
++++ b/src/ckeditor5-heading/lang/translations/sq.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/sr-latn.po b/src/ckeditor5-heading/lang/translations/sr-latn.po
+index 7f0d563..7fb346b 100755
+--- a/src/ckeditor5-heading/lang/translations/sr-latn.po
++++ b/src/ckeditor5-heading/lang/translations/sr-latn.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/sr.po b/src/ckeditor5-heading/lang/translations/sr.po
+index e3743d7..59f66c6 100755
+--- a/src/ckeditor5-heading/lang/translations/sr.po
++++ b/src/ckeditor5-heading/lang/translations/sr.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/sv.po b/src/ckeditor5-heading/lang/translations/sv.po
+index 8f3cb59..2731f8e 100755
+--- a/src/ckeditor5-heading/lang/translations/sv.po
++++ b/src/ckeditor5-heading/lang/translations/sv.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/tr.po b/src/ckeditor5-heading/lang/translations/tr.po
+index c58236b..634ff9f 100755
+--- a/src/ckeditor5-heading/lang/translations/tr.po
++++ b/src/ckeditor5-heading/lang/translations/tr.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/ug.po b/src/ckeditor5-heading/lang/translations/ug.po
+index d602452..8b1bf02 100755
+--- a/src/ckeditor5-heading/lang/translations/ug.po
++++ b/src/ckeditor5-heading/lang/translations/ug.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/uk.po b/src/ckeditor5-heading/lang/translations/uk.po
+index 39e4953..463f2eb 100755
+--- a/src/ckeditor5-heading/lang/translations/uk.po
++++ b/src/ckeditor5-heading/lang/translations/uk.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+@@ -54,8 +54,8 @@ msgstr "Заголовок 6"
+ 
+ msgctxt "A default value of the placeholder for the content title."
+ msgid "Type your title"
+-msgstr ""
++msgstr "Введіть назву"
+ 
+ msgctxt "A default value of the placeholder for the content body."
+ msgid "Type or paste your content here."
+-msgstr ""
++msgstr "Введіть або вставте свій вміст тут."
+diff --git a/src/ckeditor5-heading/lang/translations/zh-cn.po b/src/ckeditor5-heading/lang/translations/zh-cn.po
+index 1f72f02..2a1e745 100755
+--- a/src/ckeditor5-heading/lang/translations/zh-cn.po
++++ b/src/ckeditor5-heading/lang/translations/zh-cn.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/lang/translations/zh.po b/src/ckeditor5-heading/lang/translations/zh.po
+index b85db55..97204e6 100755
+--- a/src/ckeditor5-heading/lang/translations/zh.po
++++ b/src/ckeditor5-heading/lang/translations/zh.po
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++# Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ #
+ #                                     !!! IMPORTANT !!!
+ #
+diff --git a/src/ckeditor5-heading/package.json b/src/ckeditor5-heading/package.json
+index 2ab269d..293f161 100755
+--- a/src/ckeditor5-heading/package.json
++++ b/src/ckeditor5-heading/package.json
+@@ -1,27 +1,27 @@
+ {
+-  "_from": "@ckeditor/ckeditor5-heading@^15.0.0",
+-  "_id": "@ckeditor/ckeditor5-heading@15.0.0",
++  "_from": "@ckeditor/ckeditor5-heading@^19.0.1",
++  "_id": "@ckeditor/ckeditor5-heading@19.0.1",
+   "_inBundle": false,
+-  "_integrity": "sha512-LheWCvl+jcPwZTdHICO4EjaZvI/5VrJv5uG3Gk5EVca14YOkJHy65/qZwI/JgwS9cwbUQbp3h8UtWNP+nBX/Pg==",
++  "_integrity": "sha512-cniWOi1MJXWq6IPkFCFEYhND8lpycDl7ew0SUwJ3Gifqm8VfQN/kHnecBoTWm7LjRj94tEocaVrW7YH7GYsqLg==",
+   "_location": "/@ckeditor/ckeditor5-heading",
+   "_phantomChildren": {},
+   "_requested": {
+     "type": "range",
+     "registry": true,
+-    "raw": "@ckeditor/ckeditor5-heading@^15.0.0",
++    "raw": "@ckeditor/ckeditor5-heading@^19.0.1",
+     "name": "@ckeditor/ckeditor5-heading",
+     "escapedName": "@ckeditor%2fckeditor5-heading",
+     "scope": "@ckeditor",
+-    "rawSpec": "^15.0.0",
++    "rawSpec": "^19.0.1",
+     "saveSpec": null,
+-    "fetchSpec": "^15.0.0"
++    "fetchSpec": "^19.0.1"
+   },
+   "_requiredBy": [
+     "#DEV:/"
+   ],
+-  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-15.0.0.tgz",
+-  "_shasum": "40de2ed913d7dbbba05ff175bed69537a08fe38e",
+-  "_spec": "@ckeditor/ckeditor5-heading@^15.0.0",
++  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-19.0.1.tgz",
++  "_shasum": "17aab34bd27c379501b5fc612651594182c89db3",
++  "_spec": "@ckeditor/ckeditor5-heading@^19.0.1",
+   "_where": "/Users/slade/Work/ckeditor",
+   "author": {
+     "name": "CKSource",
+@@ -32,49 +32,36 @@
+   },
+   "bundleDependencies": false,
+   "dependencies": {
+-    "@ckeditor/ckeditor5-core": "^15.0.0",
+-    "@ckeditor/ckeditor5-paragraph": "^15.0.0",
+-    "@ckeditor/ckeditor5-ui": "^15.0.0",
+-    "@ckeditor/ckeditor5-utils": "^15.0.0"
++    "@ckeditor/ckeditor5-core": "^19.0.1",
++    "@ckeditor/ckeditor5-paragraph": "^19.1.0",
++    "@ckeditor/ckeditor5-ui": "^19.0.1",
++    "@ckeditor/ckeditor5-utils": "^19.0.1"
+   },
+   "deprecated": false,
+   "description": "Headings feature for CKEditor 5.",
+   "devDependencies": {
+-    "@ckeditor/ckeditor5-alignment": "^15.0.0",
+-    "@ckeditor/ckeditor5-basic-styles": "^15.0.0",
+-    "@ckeditor/ckeditor5-block-quote": "^15.0.0",
+-    "@ckeditor/ckeditor5-clipboard": "^15.0.0",
+-    "@ckeditor/ckeditor5-editor-classic": "^15.0.0",
+-    "@ckeditor/ckeditor5-engine": "^15.0.0",
+-    "@ckeditor/ckeditor5-enter": "^15.0.0",
+-    "@ckeditor/ckeditor5-image": "^15.0.0",
+-    "@ckeditor/ckeditor5-typing": "^15.0.0",
+-    "@ckeditor/ckeditor5-undo": "^15.0.0",
+-    "@ckeditor/ckeditor5-upload": "^15.0.0",
+-    "eslint": "^5.5.0",
+-    "eslint-config-ckeditor5": "^2.0.0",
+-    "husky": "^1.3.1",
+-    "lint-staged": "^7.0.0"
++    "@ckeditor/ckeditor5-alignment": "^19.0.1",
++    "@ckeditor/ckeditor5-basic-styles": "^19.0.1",
++    "@ckeditor/ckeditor5-block-quote": "^19.0.1",
++    "@ckeditor/ckeditor5-clipboard": "^19.0.1",
++    "@ckeditor/ckeditor5-editor-classic": "^19.0.1",
++    "@ckeditor/ckeditor5-engine": "^19.0.1",
++    "@ckeditor/ckeditor5-enter": "^19.0.1",
++    "@ckeditor/ckeditor5-image": "^19.0.1",
++    "@ckeditor/ckeditor5-typing": "^19.0.1",
++    "@ckeditor/ckeditor5-undo": "^19.0.1",
++    "@ckeditor/ckeditor5-upload": "^19.0.1"
+   },
+   "engines": {
+     "node": ">=8.0.0",
+     "npm": ">=5.7.1"
+   },
+-  "eslintIgnore": [
+-    "src/lib/**",
+-    "packages/**"
+-  ],
+   "files": [
+     "lang",
+     "src",
+     "theme"
+   ],
+   "homepage": "https://ckeditor.com/ckeditor-5",
+-  "husky": {
+-    "hooks": {
+-      "pre-commit": "lint-staged"
+-    }
+-  },
+   "keywords": [
+     "ckeditor",
+     "ckeditor5",
+@@ -83,18 +70,11 @@
+     "ckeditor5-plugin"
+   ],
+   "license": "GPL-2.0-or-later",
+-  "lint-staged": {
+-    "**/*.js": [
+-      "eslint --quiet"
+-    ]
+-  },
+   "name": "@ckeditor/ckeditor5-heading",
+   "repository": {
+     "type": "git",
+-    "url": "git+https://github.com/ckeditor/ckeditor5-heading.git"
+-  },
+-  "scripts": {
+-    "lint": "eslint --quiet '**/*.js'"
++    "url": "git+https://github.com/ckeditor/ckeditor5.git",
++    "directory": "packages/ckeditor5-heading"
+   },
+-  "version": "15.0.0"
++  "version": "19.0.1"
+ }
+diff --git a/src/ckeditor5-heading/src/heading.js b/src/ckeditor5-heading/src/heading.js
+index 6d23535..df20402 100755
+--- a/src/ckeditor5-heading/src/heading.js
++++ b/src/ckeditor5-heading/src/heading.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+diff --git a/src/ckeditor5-heading/src/headingbuttonsui.js b/src/ckeditor5-heading/src/headingbuttonsui.js
+index f3ba7a3..0d7f3cd 100755
+--- a/src/ckeditor5-heading/src/headingbuttonsui.js
++++ b/src/ckeditor5-heading/src/headingbuttonsui.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+@@ -94,6 +94,7 @@ export default class HeadingButtonsUI extends Plugin {
+ 
+ 			view.on( 'execute', () => {
+ 				editor.execute( 'heading', { value: option.model } );
++				editor.editing.view.focus();
+ 			} );
+ 
+ 			return view;
+diff --git a/src/ckeditor5-heading/src/headingcommand.js b/src/ckeditor5-heading/src/headingcommand.js
+index 227ae23..4a9b816 100755
+--- a/src/ckeditor5-heading/src/headingcommand.js
++++ b/src/ckeditor5-heading/src/headingcommand.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+@@ -78,8 +78,6 @@ export default class HeadingCommand extends Command {
+ 			for ( const block of blocks ) {
+ 				if ( !block.is( modelElement ) ) {
+ 					writer.rename( block, modelElement );
+-				} else {
+-					writer.rename( block, 'paragraph' );
+ 				}
+ 			}
+ 		} );
+diff --git a/src/ckeditor5-heading/src/headingediting.js b/src/ckeditor5-heading/src/headingediting.js
+index 7774a14..e3eb85e 100755
+--- a/src/ckeditor5-heading/src/headingediting.js
++++ b/src/ckeditor5-heading/src/headingediting.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+diff --git a/src/ckeditor5-heading/src/headingui.js b/src/ckeditor5-heading/src/headingui.js
+index c7134e7..106b486 100755
+--- a/src/ckeditor5-heading/src/headingui.js
++++ b/src/ckeditor5-heading/src/headingui.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+diff --git a/src/ckeditor5-heading/src/title.js b/src/ckeditor5-heading/src/title.js
+index 43f005f..60aed3d 100755
+--- a/src/ckeditor5-heading/src/title.js
++++ b/src/ckeditor5-heading/src/title.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+@@ -12,7 +12,6 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+ 
+ import ViewDocumentFragment from '@ckeditor/ckeditor5-engine/src/view/documentfragment';
+ import ViewDowncastWriter from '@ckeditor/ckeditor5-engine/src/view/downcastwriter';
+-import ViewDocument from '@ckeditor/ckeditor5-engine/src/view/document';
+ import first from '@ckeditor/ckeditor5-utils/src/first';
+ import {
+ 	needsPlaceholder,
+@@ -142,13 +141,14 @@ export default class Title extends Plugin {
+ 	 * @returns {String} The body of the document.
+ 	 */
+ 	getBody() {
+-		const data = this.editor.data;
+-		const model = this.editor.model;
+-		const root = this.editor.model.document.getRoot();
+-		const viewWriter = new ViewDowncastWriter( new ViewDocument() );
++		const editor = this.editor;
++		const data = editor.data;
++		const model = editor.model;
++		const root = editor.model.document.getRoot();
++		const viewWriter = new ViewDowncastWriter( editor.editing.view.document );
+ 
+ 		const rootRange = model.createRangeIn( root );
+-		const viewDocumentFragment = new ViewDocumentFragment();
++		const viewDocumentFragment = new ViewDocumentFragment( editor.editing.view.document );
+ 
+ 		// Convert the entire root to view.
+ 		data.mapper.clearBindings();
+@@ -171,7 +171,7 @@ export default class Title extends Plugin {
+ 		viewWriter.remove( viewWriter.createRangeOn( viewDocumentFragment.getChild( 0 ) ) );
+ 
+ 		// view -> data
+-		return this.editor.data.processor.toData( viewDocumentFragment );
++		return editor.data.processor.toData( viewDocumentFragment );
+ 	}
+ 
+ 	/**
+diff --git a/src/ckeditor5-heading/src/utils.js b/src/ckeditor5-heading/src/utils.js
+index 66aa6be..6278e8e 100755
+--- a/src/ckeditor5-heading/src/utils.js
++++ b/src/ckeditor5-heading/src/utils.js
+@@ -1,5 +1,5 @@
+ /**
+- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+diff --git a/src/ckeditor5-heading/theme/heading.css b/src/ckeditor5-heading/theme/heading.css
+index 5ecbd37..602da7c 100755
+--- a/src/ckeditor5-heading/theme/heading.css
++++ b/src/ckeditor5-heading/theme/heading.css
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
++ * Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
