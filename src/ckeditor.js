@@ -39,11 +39,14 @@ import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
+import PostWidget from './postWidget/postwidget';
 import ImagePanel from './ImagePanel/imagepanel';
 import Fullscreen from './fullscreen/fullscreen';
+
+//OVERRRIDES
 import Heading from './ckeditor5-heading/src/heading';
 import ImageUpload from './ckeditor5-image/src/imageupload';
-// import Autosave from './autosave/autosave';
+
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -76,9 +79,11 @@ ClassicEditor.builtinPlugins = [
 	Subscript,
 	Superscript,
 	Underline,
+
 	ImagePanel,
 	ImageResize,
-	Fullscreen
+	Fullscreen,
+	PostWidget
 ];
 
 // Editor configuration.
@@ -98,6 +103,6 @@ ClassicEditor.defaultConfig = {
 			'mergeTableCells'
 		]
 	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
+
 	language: 'en'
 };
