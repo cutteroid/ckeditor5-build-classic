@@ -2,6 +2,7 @@ import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
 import { toWidget, toWidgetEditable } from '@ckeditor/ckeditor5-widget/src/utils';
 import Widget from '@ckeditor/ckeditor5-widget/src/widget'
+import InsertEmbedWidgetCommand from './insertembedwidgetcommand.js'
 
 export default class EmbedWidgetEditing extends Plugin {
 
@@ -12,6 +13,8 @@ export default class EmbedWidgetEditing extends Plugin {
 	init() {
 		this._defineSchema();
 		this._defineConverters();
+
+		  this.editor.commands.add( 'insertEmbedWidget', new InsertEmbedWidgetCommand( this.editor ) );
 	}
 
 	_defineSchema() {
@@ -20,14 +23,9 @@ export default class EmbedWidgetEditing extends Plugin {
 
 		schema.register( 'embedWidget', {
 			isObject: true,
-			allowWhere: '$block'
+			allowWhere: '$block',
+			allowAttributes: [ 'type', 'uid' ]
 		} );
-
-		// schema.register( 'postWidgetAuthor', {
-		// 	isLimit: true,
-		// 	allowIn: 'postWidget',
-		// 	allowContentOf: '$block'
-		// } );
 
 		schema.register( 'embedUrl', {
 			isLimit: true,
@@ -59,16 +57,33 @@ export default class EmbedWidgetEditing extends Plugin {
 		        classes: 'customEmbed'
 		    }
 		};
-		conversion.for( 'upcast' ).elementToElement( embedWidgetConfig );
-		conversion.for( 'dataDowncast' ).elementToElement( embedWidgetConfig );
-		conversion.for( 'editingDowncast' ).elementToElement( {
-		    model: 'customEmbed',
+
+		conversion.for( 'upcast' ).elementToElement( {
+		    model: ( viewElement, modelWriter ) => {
+		        const el = modelWriter.createElement( 'embedWidget', { class: 'customEmbed', type: viewElement.getAttribute( 'type' ), uid: viewElement.getAttribute( 'uid' ) } );
+		        return el;
+		    },
+		    view: {
+		        name: 'figure',
+		        classes: 'customEmbed'
+		    }
+		} );
+		conversion.for( 'dataDowncast' ).elementToElement( {
+			model: 'embedWidget',
 		    view: ( modelElement, viewWriter ) => {
-		        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed' } );
+		    	console.log('dataDowncast', modelElement);
+		        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed', type: modelElement.getAttribute( 'type' ), uid: modelElement.getAttribute( 'uid' ) } );
+		        return figure;
+		    }
+		} );
+		conversion.for( 'editingDowncast' ).elementToElement( {
+		    model: 'embedWidget',
+		    view: ( modelElement, viewWriter ) => {
+		    	console.log('editingDowncast', modelElement);
+		        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed', type: modelElement.getAttribute( 'type' ), uid: modelElement.getAttribute( 'uid' ) } );
 		        return toWidget( figure, viewWriter );
 		    }
 		} );
-
 
 		const embedURLConfig = {
 		    model: 'embedUrl',
@@ -105,6 +120,22 @@ export default class EmbedWidgetEditing extends Plugin {
 		    }
 		} );
 
+		const embedDateConfig = {
+		    model: 'embedDate',
+		    view: {
+		        name: 'div',
+		        classes: 'customEmbedDate'
+		    }
+		};
+		conversion.for( 'upcast' ).elementToElement( embedDateConfig );
+		conversion.for( 'dataDowncast' ).elementToElement( embedDateConfig );
+		conversion.for( 'editingDowncast' ).elementToElement( {
+		    model: 'embedDate',
+		    view: ( modelElement, viewWriter ) => {
+		        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedDate' } );
+		        return toWidgetEditable( div, viewWriter );
+		    }
+		} );
 
 	}
 
