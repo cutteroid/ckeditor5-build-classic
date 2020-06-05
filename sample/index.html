@@ -11,22 +11,38 @@
 		pre {
 			background: #f0f3d6;
 		}
-		.forumPost
+		.customEmbed
 		{
-			padding: 1em;
+			padding: 5px 10px;
 			background: #fafafa;
+			border: 1px solid #f2f2f2;
 			border-radius: 5px;
 			margin: 1em 0px;
+			position: relative;
 		}
 
-		.forumPostAuthor
+		.customEmbed::after
+		{
+			top: -1px;
+			right: 10px;
+			background: #a5a5a5;
+			font: 300 10pt Roboto, Arial;
+			line-height: 16px;
+			padding: 5px;
+			color: #fff;
+			white-space: nowrap;
+			content: attr(type);
+			position: absolute;
+		}
+
+		.customEmbedUrl
 		{
 			font: 300 13pt Roboto,Arial;
 			color: #1a97c0;
 			margin: 4px 0px;
 		}
 
-		.forumPostDate
+		.customEmbedDate
 		{
 			font: 300 8pt Roboto,Arial;
 			color: #999;
@@ -41,30 +57,17 @@
 
 <div id="editor">
 
-	<!-- <figure class="forumPost">
-
-        <h3 class="forumPostAuthor">Abdillo</h3>
-
-        <div class="forumPostContent">
-            <p>Hohoho mofos</p>
-            <p>trololo !!!</p>
-        </div>
-
-        <div class="forumPostDate">10 OCT 2019 03:00:00</div>
-
-	</figure> -->
-
-	<figure class="forumPost">
-		<div class="forumPostContent">
-			<p>Post thread title #1</p>
+	<figure class="customEmbed" type="post">
+		<div class="customEmbedUrl">http://google.com/olool</div>
+		<div class="customEmbedContent">
+			<p>Forum post content</p>
 		</div>
+		<div class="customEmbedDate">12 tue 123123</div>
 	</figure>
-
 
 	<h2>Sample</h2>
 
 	<p>This is an instance of the <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor build</a>.</p>
-
 
 	<pre data-language="Plain text"><code class="plaintext"> code block </code></pre>
 	<pre data-language="JavaScript"><code class="javascript">kkk<br>jknjknj</code></pre>
@@ -127,7 +130,7 @@
 			window.editor = editor;
 		} )
 		.catch( error => {
-			// console.error( 'There was a problem initializing the editor.', error );
+			console.error( 'There was a problem initializing the editor.', error );
 		} );
 </script>
 

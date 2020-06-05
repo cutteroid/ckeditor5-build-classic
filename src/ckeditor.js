@@ -39,7 +39,7 @@ import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
-import PostWidget from './postWidget/postwidget';
+import EmbedWidget from './embedWidget/embedwidget';
 import ImagePanel from './ImagePanel/imagepanel';
 import Fullscreen from './fullscreen/fullscreen';
 
@@ -83,7 +83,7 @@ ClassicEditor.builtinPlugins = [
 	ImagePanel,
 	ImageResize,
 	Fullscreen,
-	PostWidget
+	EmbedWidget
 ];
 
 // Editor configuration.
