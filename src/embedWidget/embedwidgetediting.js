@@ -52,46 +52,60 @@ export default class EmbedWidgetEditing extends Plugin {
 
 		const conversion = this.editor.conversion;
 
-		conversion.elementToElement( {
-			model: 'embedWidget',
-			view: {
-				name: 'figure',
-				classes: 'customEmbed'
-			}
+		const embedWidgetConfig = {
+		    model: 'embedWidget',
+		    view: {
+		        name: 'figure',
+		        classes: 'customEmbed'
+		    }
+		};
+		conversion.for( 'upcast' ).elementToElement( embedWidgetConfig );
+		conversion.for( 'dataDowncast' ).elementToElement( embedWidgetConfig );
+		conversion.for( 'editingDowncast' ).elementToElement( {
+		    model: 'customEmbed',
+		    view: ( modelElement, viewWriter ) => {
+		        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed' } );
+		        return toWidget( figure, viewWriter );
+		    }
 		} );
 
-		// conversion.elementToElement( {
-		// 	model: 'postWidgetAuthor',
-		// 	view: {
-		// 		name: 'h3',
-		// 		classes: 'forumPostAuthor'
-		// 	}
-		// } );
 
-
-		conversion.elementToElement( {
-			model: 'embedUrl',
-			view: {
-				name: 'div',
-				classes: 'customEmbedUrl'
-			}
+		const embedURLConfig = {
+		    model: 'embedUrl',
+		    view: {
+		        name: 'div',
+		        classes: 'customEmbedUrl'
+		    }
+		};
+		conversion.for( 'upcast' ).elementToElement( embedURLConfig );
+		conversion.for( 'dataDowncast' ).elementToElement( embedURLConfig );
+		conversion.for( 'editingDowncast' ).elementToElement( {
+		    model: 'embedUrl',
+		    view: ( modelElement, viewWriter ) => {
+		        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedUrl' } );
+		        return toWidgetEditable( div, viewWriter );
+		    }
 		} );
 
-		conversion.elementToElement( {
-			model: 'embedContent',
-			view: {
-				name: 'div',
-				classes: 'customEmbedContent'
-			}
+
+		const embedContentConfig = {
+		    model: 'embedContent',
+		    view: {
+		        name: 'div',
+		        classes: 'customEmbedContent'
+		    }
+		};
+		conversion.for( 'upcast' ).elementToElement( embedContentConfig );
+		conversion.for( 'dataDowncast' ).elementToElement( embedContentConfig );
+		conversion.for( 'editingDowncast' ).elementToElement( {
+		    model: 'embedContent',
+		    view: ( modelElement, viewWriter ) => {
+		        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedContent' } );
+		        return toWidgetEditable( div, viewWriter );
+		    }
 		} );
 
-		conversion.elementToElement( {
-			model: 'embedDate',
-			view: {
-				name: 'div',
-				classes: 'forumPostDate'
-			}
-		} );
+
 	}
 
 }
