@@ -11,7 +11,7 @@
 		pre {
 			background: #f0f3d6;
 		}
-		.customEmbed
+		.embedWidget
 		{
 			padding: 5px 10px;
 			background: #fafafa;
@@ -21,7 +21,7 @@
 			position: relative;
 		}
 
-		.customEmbed::after
+		.embedWidget::after
 		{
 			top: -1px;
 			right: 10px;
@@ -31,8 +31,22 @@
 			padding: 5px;
 			color: #fff;
 			white-space: nowrap;
-			content: attr(type);
 			position: absolute;
+		}
+
+		.embedWidget[type='post']::after
+		{
+			content: "Forum Post";
+		}
+
+		.embedWidget[type='pm']::after
+		{
+			content: "Personal Message";
+		}
+
+		.embedWidget[type='csv']::after
+		{
+			content: "CSV File";
 		}
 
 		.customEmbedUrl
@@ -59,11 +73,9 @@
 
 	forum post
 
-	<figure class="customEmbed" type="forum post" uid="abc">
+	<figure class="customEmbed" type="post" uid="abc">
 		<div class="customEmbedUrl">http://google.com/olool</div>
-		<div class="customEmbedContent">
-			<p>Forum post content</p>
-		</div>
+		<div class="customEmbedContent">Forum post content</div>
 		<div class="customEmbedDate">12 tue 123123</div>
 	</figure>
 
