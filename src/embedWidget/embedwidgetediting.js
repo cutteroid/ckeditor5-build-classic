@@ -127,8 +127,6 @@ export default class EmbedWidgetEditing extends Plugin {
 	}
 
 	init() {
-		// this._defineSchema();
-		// this._defineConverters();
 
 		const registry = this.registry;
 		const editor = this.editor;
@@ -143,21 +141,14 @@ export default class EmbedWidgetEditing extends Plugin {
 			isObject: true,
 			isBlock: true,
 			allowWhere: '$block',
-			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date' ]
+			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date', 'author' ]
 		} );
 
 		// Model -> Data
 		conversion.for( 'dataDowncast' ).elementToElement( {
 			model: 'embedWidget',
 			view: ( modelElement, viewWriter ) => {
-				var data = {
-					type: modelElement.getAttribute( 'type' ),
-					uid: modelElement.getAttribute( 'uid' ),
-					text: modelElement.getAttribute('text'),
-					date: modelElement.getAttribute('date'),
-					url: modelElement.getAttribute('url')
-				};
-				console.log('dataDowncast', modelElement, data);
+				var data = this._getAttributesData(modelElement);
 
 				return createMediaFigureElement( viewWriter, registry, data );
 			}
@@ -170,15 +161,9 @@ export default class EmbedWidgetEditing extends Plugin {
 		conversion.for( 'editingDowncast' ).elementToElement( {
 			model: 'embedWidget',
 			view: ( modelElement, viewWriter ) => {
-				var data = {
-					type: modelElement.getAttribute( 'type' ),
-					uid: modelElement.getAttribute( 'uid' ),
-					text: modelElement.getAttribute('text'),
-					date: modelElement.getAttribute('date'),
-					url: modelElement.getAttribute('url')
-				};
+				var data = this._getAttributesData(modelElement);
 
-				console.log('editingDowncast', modelElement, data);
+
 				const figure = createMediaFigureElement( viewWriter, registry, data );
 
 				return toEmbedWidget( figure, viewWriter );
@@ -186,148 +171,50 @@ export default class EmbedWidgetEditing extends Plugin {
 		} );
 
 		conversion.for( 'upcast' ).elementToElement( {
-				view: {
-					name: 'figure',
-					attributes: {
-						type: true,
-						uid: true
-					}
-				},
-				model: ( viewMedia, modelWriter ) => {
-					var data = {
-						type: viewMedia.getAttribute( 'type' ),
-						uid: viewMedia.getAttribute( 'uid' ),
-						text: viewMedia.getChild( 1 ).getChild( 0 )._textData,
-						date: viewMedia.getChild( 2 ).getChild( 0 )._textData,
-						url: viewMedia.getChild( 0 ).getChild( 0 )._textData
-					};
-
-					return modelWriter.createElement( 'embedWidget', data );
+			view: {
+				name: 'figure',
+				attributes: {
+					type: true,
+					uid: true
 				}
-			} );
+			},
+			model: ( viewMedia, modelWriter ) => {
+				var data = this._getValuesData(viewMedia);
+
+				return modelWriter.createElement( 'embedWidget', data );
+			}
+		} );
 
 	}
 
-	// _defineSchema() {
+	_getAttributesData(element)
+	{
+		var data = {
+			type: element.getAttribute( 'type' ),
+			uid: element.getAttribute( 'uid' ),
+			text: element.getAttribute('text'),
+			date: element.getAttribute('date'),
+			url: element.getAttribute('url'),
+			author: element.getAttribute('author')
+		};
 
-	// 	const schema = this.editor.model.schema;
+		return data;
+	}
 
-	// 	schema.register( 'embedWidget', {
-	// 		isBlock: true,
-	// 		allowWhere: '$block',
-	// 		allowAttributes: [ 'type', 'uid' ]
-	// 	} );
+	_getValuesData(figureElement)
+	{
+		var element = figureElement.getChild( 0 ).getChild( 0 );
 
-	// 	schema.register( 'embedUrl', {
-	// 		isLimit: true,
-	// 		allowIn: 'embedWidget',
-	// 		allowContentOf: '$block'
-	// 	} );
+		var data = {
+			type: figureElement.getAttribute( 'type' ),
+			uid: figureElement.getAttribute( 'uid' ),
+			author: element.getChild( 0 ).getChild( 0 )._textData,
+			text: element.getChild( 1 ).getChild( 0 )._textData,
+			url: element.getChild( 2 ).getChild( 0 )._textData,
+			date: element.getChild( 3 ).getChild( 0 )._textData
+		};
 
-	// 	schema.register( 'embedContent', {
-	// 		isLimit: true,
-	// 		allowIn: 'embedWidget',
-	// 		allowContentOf: '$block'
-	// 	} );
-
-	// 	schema.register( 'embedDate', {
-	// 		isLimit: true,
-	// 		allowIn: 'embedWidget',
-	// 		allowContentOf: '$block'
-	// 	} );
-	// }
-
-	// _defineConverters() {
-
-	// 	const conversion = this.editor.conversion;
-
-	// 	const embedWidgetConfig = {
-	// 	    model: 'embedWidget',
-	// 	    view: {
-	// 	        name: 'figure',
-	// 	        classes: 'customEmbed'
-	// 	    }
-	// 	};
-
-	// 	conversion.for( 'upcast' ).elementToElement( {
-	// 	    model: ( viewElement, modelWriter ) => {
-	// 	        const el = modelWriter.createElement( 'embedWidget', { class: 'customEmbed', type: viewElement.getAttribute( 'type' ), uid: viewElement.getAttribute( 'uid' ) } );
-	// 	        return el;
-	// 	    },
-	// 	    view: {
-	// 	        name: 'figure',
-	// 	        classes: 'customEmbed'
-	// 	    }
-	// 	} );
-	// 	conversion.for( 'dataDowncast' ).elementToElement( {
-	// 		model: 'embedWidget',
-	// 	    view: ( modelElement, viewWriter ) => {
-	// 	    	console.log('dataDowncast', modelElement);
-	// 	        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed', type: modelElement.getAttribute( 'type' ), uid: modelElement.getAttribute( 'uid' ) } );
-	// 	        return figure;
-	// 	    }
-	// 	} );
-	// 	conversion.for( 'editingDowncast' ).elementToElement( {
-	// 	    model: 'embedWidget',
-	// 	    view: ( modelElement, viewWriter ) => {
-	// 	    	console.log('editingDowncast', modelElement);
-	// 	        const figure = viewWriter.createContainerElement( 'figure', { class: 'customEmbed', type: modelElement.getAttribute( 'type' ), uid: modelElement.getAttribute( 'uid' ) } );
-	// 	        return toWidget( figure, viewWriter );
-	// 	    }
-	// 	} );
-
-	// 	const embedURLConfig = {
-	// 	    model: 'embedUrl',
-	// 	    view: {
-	// 	        name: 'div',
-	// 	        classes: 'customEmbedUrl'
-	// 	    }
-	// 	};
-	// 	conversion.for( 'upcast' ).elementToElement( embedURLConfig );
-	// 	conversion.for( 'dataDowncast' ).elementToElement( embedURLConfig );
-	// 	conversion.for( 'editingDowncast' ).elementToElement( {
-	// 	    model: 'embedUrl',
-	// 	    view: ( modelElement, viewWriter ) => {
-	// 	        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedUrl' } );
-	// 	        return toWidgetEditable( div, viewWriter );
-	// 	    }
-	// 	} );
-
-
-	// 	const embedContentConfig = {
-	// 	    model: 'embedContent',
-	// 	    view: {
-	// 	        name: 'div',
-	// 	        classes: 'customEmbedContent'
-	// 	    }
-	// 	};
-	// 	conversion.for( 'upcast' ).elementToElement( embedContentConfig );
-	// 	conversion.for( 'dataDowncast' ).elementToElement( embedContentConfig );
-	// 	conversion.for( 'editingDowncast' ).elementToElement( {
-	// 	    model: 'embedContent',
-	// 	    view: ( modelElement, viewWriter ) => {
-	// 	        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedContent' } );
-	// 	        return toWidgetEditable( div, viewWriter );
-	// 	    }
-	// 	} );
-
-	// 	const embedDateConfig = {
-	// 	    model: 'embedDate',
-	// 	    view: {
-	// 	        name: 'div',
-	// 	        classes: 'customEmbedDate'
-	// 	    }
-	// 	};
-	// 	conversion.for( 'upcast' ).elementToElement( embedDateConfig );
-	// 	conversion.for( 'dataDowncast' ).elementToElement( embedDateConfig );
-	// 	conversion.for( 'editingDowncast' ).elementToElement( {
-	// 	    model: 'embedDate',
-	// 	    view: ( modelElement, viewWriter ) => {
-	// 	        const div = viewWriter.createContainerElement( 'div', { class: 'customEmbedDate' } );
-	// 	        return toWidgetEditable( div, viewWriter );
-	// 	    }
-	// 	} );
-
-	// }
+		return data;
+	}
 
 }

@@ -4,16 +4,13 @@ export function insertEmbedWidget( model, data, insertPosition ) {
 	model.change( writer => {
 		const mediaElement = writer.createElement( 'embedWidget', data );
 
-		console.log('data 2', data, mediaElement);
-
 		model.insertContent( mediaElement, insertPosition );
-
-		writer.setSelection( mediaElement, 'on' );
+		writer.setSelection( null );
 	} );
 }
 
 export function createMediaFigureElement( writer, registry, data ) {
-	console.log(data);
+
 	const figure = writer.createContainerElement( 'figure', { class: 'embedWidget', type: data.type, uid: data.uid } );
 
 	figure.getFillerOffset = null;

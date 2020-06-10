@@ -1,5 +1,5 @@
 export function modelToViewUrlAttributeConverter( registry, data ) {
-	console.log('converter', data);
+
 	return dispatcher => {
 		dispatcher.on( 'attribute:data:embedWidget', converter );
 	};
@@ -18,7 +18,7 @@ export function modelToViewUrlAttributeConverter( registry, data ) {
 		// viewWriter.remove( mediaContentElement );
 
 		// const mediaViewElement = registry.getMediaViewElement( viewWriter, url );
-console.log('render');
+
 		viewWriter.insert( viewWriter.createPositionAt( figure, 0 ) );
 	}
 }

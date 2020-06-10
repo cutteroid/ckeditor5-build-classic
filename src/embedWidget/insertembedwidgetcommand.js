@@ -10,8 +10,8 @@ export default class InsertEmbedWidgetCommand extends Command {
         const model = this.editor.model;
         const selection = model.document.selection;
         const insertPosition = findOptimalInsertionPosition( selection, model );
-        console.log('data 1', data);
         insertEmbedWidget( model, data, insertPosition );
+        this.editor.editing.view.focus();
     }
 
     refresh() {
