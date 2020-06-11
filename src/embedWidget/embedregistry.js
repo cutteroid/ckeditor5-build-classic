@@ -62,32 +62,32 @@ class EmbeddedData {
 			case "post":
 				children = [
 					{
-						tag: 'div',
+						tag: 'p',
 						attributes: {
 							class: 'customEmbedAuthor'
 						},
 						children: [ this.data.author ]
 					},
 					{
-						tag: 'div',
+						tag: 'p',
 						attributes: {
 							class: 'customEmbedContent'
 						},
 						children: [ this.data.text ]
 					},
 					{
-						tag: 'div',
-						attributes: {
-							class: 'customEmbedUrl'
-						},
-						children: [ this.data.url ]
-					},
-					{
-						tag: 'div',
+						tag: 'p',
 						attributes: {
 							class: 'customEmbedDate'
 						},
 						children: [ this.data.date ]
+					},
+					{
+						tag: 'p',
+						attributes: {
+							class: 'customEmbedUrl'
+						},
+						children: [ this.data.url ]
 					}
 				]
 				break
