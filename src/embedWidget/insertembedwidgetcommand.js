@@ -7,11 +7,22 @@ import { insertEmbedWidget } from './utils';
 export default class InsertEmbedWidgetCommand extends Command {
 
     execute(data) {
-        const model = this.editor.model;
+        data.prepend = true;
+        const editor = this.editor;
+        const model = editor.model;
         const selection = model.document.selection;
-        const insertPosition = findOptimalInsertionPosition( selection, model );
+        var insertPosition = findOptimalInsertionPosition( selection, model );
+
+        if (data.prepend) {
+            const content = 'prepended';
+            const viewFragment = editor.data.processor.toView( content );
+            const modelFragment = editor.data.toModel( viewFragment );
+            const range = model.insertContent( modelFragment, insertPosition, null, 'end' );
+
+            insertPosition = model.createSelection( range.end, 'after' );
+        }
+
         insertEmbedWidget( model, data, insertPosition );
-        this.editor.editing.view.focus();
     }
 
     refresh() {
