@@ -7,15 +7,13 @@ import { insertEmbedWidget } from './utils';
 export default class InsertEmbedWidgetCommand extends Command {
 
     execute(data) {
-        data.prepend = true;
         const editor = this.editor;
         const model = editor.model;
         const selection = model.document.selection;
         var insertPosition = findOptimalInsertionPosition( selection, model );
 
-        if (data.prepend) {
-            const content = 'prepended';
-            const viewFragment = editor.data.processor.toView( content );
+        if (data.prepend_content) {
+            const viewFragment = editor.data.processor.toView( data.prepend_content );
             const modelFragment = editor.data.toModel( viewFragment );
             const range = model.insertContent( modelFragment, insertPosition, null, 'end' );
 
