@@ -90,7 +90,26 @@ class EmbeddedData {
 						children: [ this.data.url ]
 					}
 				]
-				break
+				break;
+
+			case "csv":
+				children = [
+					{
+						tag: 'p',
+						attributes: {
+							class: 'customEmbedFileName'
+						},
+						children: [ this.data.name ]
+					},
+					{
+						tag: 'p',
+						attributes: {
+							class: 'customEmbedCount'
+						},
+						children: [ this.data.count ]
+					}
+				];
+				break;
 		}
 
 		return children;

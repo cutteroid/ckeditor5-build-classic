@@ -33,7 +33,7 @@ export default class EmbedWidgetEditing extends Plugin {
 			isObject: true,
 			isBlock: true,
 			allowWhere: '$block',
-			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date', 'author' ]
+			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date', 'author', 'name', 'count' ]
 		} );
 
 		// Model -> Data
@@ -81,30 +81,53 @@ export default class EmbedWidgetEditing extends Plugin {
 
 	_getAttributesData(element)
 	{
+
 		var data = {
-			type: element.getAttribute( 'type' ),
-			uid: element.getAttribute( 'uid' ),
-			text: element.getAttribute('text'),
-			date: element.getAttribute('date'),
-			url: element.getAttribute('url'),
-			author: element.getAttribute('author')
-		};
+				type: element.getAttribute( 'type' ),
+				uid:  element.getAttribute( 'uid' )
+			};
+
+		switch (data.type) {
+			case "post":
+				data.text = element.getAttribute('text');
+				data.date = element.getAttribute('date');
+				data.url = element.getAttribute('url');
+				data.author = element.getAttribute('author');
+				break;
+
+			case "csv":
+				data.count = element.getAttribute('count');
+				data.name = element.getAttribute('name');
+				break;
+		}
+
 
 		return data;
 	}
 
 	_getValuesData(figureElement)
 	{
-		var element = figureElement.getChild( 0 ).getChild( 0 );
+		var
+			element = figureElement.getChild( 0 ).getChild( 0 ),
+			data = {
+				type: figureElement.getAttribute( 'type' ),
+				uid: figureElement.getAttribute( 'uid' )
+			}
+		;
 
-		var data = {
-			type: figureElement.getAttribute( 'type' ),
-			uid: figureElement.getAttribute( 'uid' ),
-			author: element.getChild( 0 ).getChild( 0 )._textData,
-			text: element.getChild( 1 ).getChild( 0 )._textData,
-			url: element.getChild( 3 ).getChild( 0 )._textData,
-			date: element.getChild( 2 ).getChild( 0 )._textData
-		};
+		switch (data.type) {
+			case "post":
+				data.author = element.getChild( 0 ).getChild( 0 )._textData;
+				data.text = element.getChild( 1 ).getChild( 0 )._textData;
+				data.url = element.getChild( 3 ).getChild( 0 )._textData;
+				data.date = element.getChild( 2 ).getChild( 0 )._textData;
+				break;
+
+			case "csv":
+				data.name = element.getChild( 0 ).getChild( 0 )._textData;
+				data.count = element.getChild( 1 ).getChild( 0 )._textData;
+				break;
+		}
 
 		return data;
 	}
