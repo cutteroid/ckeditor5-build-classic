@@ -11,7 +11,7 @@ export function insertEmbedWidget( model, data, insertPosition ) {
 
 export function createMediaFigureElement( writer, registry, data ) {
 
-	const figure = writer.createContainerElement( 'figure', { class: 'embedWidget', type: data.type, uid: data.uid } );
+	const figure = writer.createContainerElement( 'figure', { class: 'embedWidget', type: data.type, uid: data.uid, translated: data.translated } );
 
 	figure.getFillerOffset = null;
 

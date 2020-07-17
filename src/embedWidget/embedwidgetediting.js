@@ -33,7 +33,7 @@ export default class EmbedWidgetEditing extends Plugin {
 			isObject: true,
 			isBlock: true,
 			allowWhere: '$block',
-			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date', 'author', 'name', 'count' ]
+			allowAttributes: [ 'type', 'uid', 'text', 'url', 'date', 'author', 'name', 'count', 'translated' ]
 		} );
 
 		// Model -> Data
@@ -67,7 +67,8 @@ export default class EmbedWidgetEditing extends Plugin {
 				name: 'figure',
 				attributes: {
 					type: true,
-					uid: true
+					uid: true,
+					translated: true
 				}
 			},
 			model: ( viewMedia, modelWriter ) => {
@@ -93,6 +94,7 @@ export default class EmbedWidgetEditing extends Plugin {
 				data.date = element.getAttribute('date');
 				data.url = element.getAttribute('url');
 				data.author = element.getAttribute('author');
+				data.translated = element.getAttribute('translated');
 				break;
 
 			case "csv":
@@ -117,6 +119,7 @@ export default class EmbedWidgetEditing extends Plugin {
 
 		switch (data.type) {
 			case "post":
+				data.translated = figureElement.getAttribute( 'translated' );
 				data.author = element.getChild( 0 ).getChild( 0 )._textData;
 				data.text = element.getChild( 1 ).getChild( 0 )._textData;
 				data.url = element.getChild( 3 ).getChild( 0 )._textData;
